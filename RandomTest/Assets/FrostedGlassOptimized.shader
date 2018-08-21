@@ -1,4 +1,6 @@
-﻿Shader "Unlit/FrostedGlass"
+﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+Shader "Unlit/FrostedGlass"
 {
     Properties
     {
@@ -39,7 +41,7 @@
                 v2f vert(appdata v)
                 {
                     v2f o;
-                    o.vertex = mul(UNITY_MATRIX_MVP, v.vertex);
+                    o.vertex = UnityObjectToClipPos(v.vertex);
 
                     #if UNITY_UV_STARTS_AT_TOP
                     float scale = -1.0;
@@ -152,7 +154,7 @@
                 v2f vert(appdata v)
                 {
                     v2f o;
-                    o.vertex = mul(UNITY_MATRIX_MVP, v.vertex);
+                    o.vertex = UnityObjectToClipPos(v.vertex);
                     #if UNITY_UV_STARTS_AT_TOP
                     float scale = -1.0;
                     #else
