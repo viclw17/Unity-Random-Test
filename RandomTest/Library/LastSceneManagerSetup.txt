@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/test2.unity
+- path: Assets/Scenes/test4_Stencils.unity
   isLoaded: 1
   isActive: 1
